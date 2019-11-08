@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class itemscollection {
+	public static void main(String[] args) {
+
+		Item e1=new Item("BURBERRY",111,3000,"this brand is for dress items");
+		Item e2=new Item("RALPH_LAUREN",892,17000,"this brand is for dress items");
+		Item e3=new Item("PRADA",9003,1000,"this brand is for dress items");
+		Item e4=new Item("CHANEL",564,19000,"this brand is for dress items");
+		Item e5=new Item("GUCCI",523,30000,"this brand is for dress items");
+		Item e6=new Item("Baskin_Robbins",788,70000,"this brand is for food items");
+		Item e7=new Item("Crosse & Blackwell",763,1000,"this brand is for food items");
+		Item e8=new Item("Cheetos",490,9000,"this brand is for food snacks items");
+		Item e9=new Item("Smith's Crisps",1001,31000,"this brand is for food items");
+		Item e10=new Item("Kurkure",786,7000,"this brand is for food snacks items");
+
+
+		List<Item> e=new ArrayList();
+
+		e.add(e1);
+		e.add(e2);
+		e.add(e3);
+		e.add(e4);
+		e.add(e5);
+		e.add(e6);
+		e.add(e7);
+		e.add(e8);
+		e.add(e9);
+		e.add(e10);
+
+		e.sort((Item o1, Item o2)->o2.price-o1.price);
+
+		for(int i=0;i<e.size();i++) {
+			System.out.println("brand name: "+e.get(i).brand+" "+" "+"price: "+e.get(i).price+" "+"Itemid: "+e.get(i).itemId+" "+"description: "+e.get(i).shortDescription);
+		}
+	}
+
+}
+
+class Item{
+	String brand;
+	int itemId;
+	int price;
+	String shortDescription;
+
+
+	public Item(String brand,int itemId,int price,String shortDescription){
+		this.brand=brand;
+		this.itemId=itemId;
+		this.price=price;
+		this.shortDescription=shortDescription;
+
+	}
+
+}
+
+
+
